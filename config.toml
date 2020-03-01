@@ -1,78 +1,86 @@
-baseurl = "https://example.org/"
-languageCode = "en-us"
-title = "Material Docs"
-theme = "hugo-material-docs"
-metadataformat = "yaml"
-canonifyurls = true
-# Enable Google Analytics by entering your tracking id
-googleAnalytics = ""
+baseURL = "https://www.flysnow.org"
+languageCode = "zh-CN"
+title = "@瑾语@"
+theme = "maupassant-hugo-master"
+googleAnalytics = ""  # UA-XXXXXXXX-X
+
+## 保持分类的原始名字（false会做转小写处理）
+preserveTaxonomyNames = true
+## 是否禁止URL Path转小写
+disablePathToLower = true
+
+hasCJKLanguage = true
+summaryLength = 140
+
+[author]
+	name = "@瑾语@"
 
 [params]
-	# General information
-	author = "Digitalcraftsman"
-	description = "A material design theme for documentations."
-	copyright = "Released under the MIT license"
+	author = "@瑾语@"
+	subtitle = "个人博客"
+	keywords = "个人博客"
+	description = "专注于IT互联网."
+	busuanzi = true #启用不算子网页统计
+	googleAd = "ca-pub-4031353640611810"  #ca-pub-xxxxxxxxxxxxxx
+	localSearch = true # 启用本地搜索
 
-	# Repository
-	provider = "GitHub"
-	repo_url = "https://github.com/digitalcraftsman/hugo-material-docs"
+	# 这里我存放在了主题的static文件夹里，根目录的似乎也可以
+	#customCSS = ['douban.css', 'other.css']
+	# if ['custom.css'], load '/static/css/custom.css' file
+	#customJS = ['douban.js']
+	# if ['custom.js'], load '/static/js/custom.js' file
 
-	version = "1.0.0"
-	logo = "images/logo.png"
-	favicon = ""
+	# 全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能
+	toc = false  # 是否开启目录
 
-	permalink = "#"
+## 友情链接，可以多个
 
-	# Custom assets
-	custom_css = []
-	custom_js  = []
+[[params.links]]
+	title = "飞雪无情的博客"
+	name = "飞雪无情的博客"
+	url = "https://www.flysnow.org/"
 
-	# Syntax highlighting theme
-	highlight_css  = ""
+[[params.links]]
+	title = "Android Gradle权威指南"
+	name = "Android Gradle权威指南"
+	url = "http://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e"
 
-	[params.palette]
-    	primary = "red"
-    	accent  = "teal"
+## 配置 utteranc评论,教程参考 https://utteranc.es/
+[params.utteranc]
+	enable = true
+	repo = "yaoyt1/hugo" ##换成自己得
+	issueTerm = "pathname"
+	theme = "github-light"
 
-    [params.font]
-    	text = "Ubuntu"
-    	code = "Ubuntu Mono"
+## 开启版权声明，协议名字和链接都可以换
+[params.cc]
+    name = "知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议"
+    link = "https://creativecommons.org/licenses/by-nc-nd/4.0/"
 
+## 配置代码高亮
+[markup]
+	[markup.highlight]
+    lineNos = true
+    style = "github"
 
-[social]
-	twitter = ""
-	github  = "digitalcraftsman"
-	email   = "hello@email.com"
+## 配置网站菜单
 
+[menu]
 
-[[menu.main]]
-	name   = "Material"
-	url    = "/"
-	weight = 0
+  [[menu.main]]
+    identifier = "tools"
+    name = "工具"
+    url = "/tools/"
+    weight = 2
 
-[[menu.main]]
-	name   = "Getting started"
-	url    = "getting-started/"
-	weight = 10
+  [[menu.main]]
+    identifier = "archives"
+    name = "归档"
+    url = "/archives/"
+    weight = 3
 
-[[menu.main]]
-	name   = "Adding content"
-	url    = "adding-content/"
-	weight = 20
-
-[[menu.main]]
-	name   = "Roadmap"
-	url    = "roadmap/"
-	weight = 30
-
-[[menu.main]]
-	name   = "License"
-	url    = "license/"
-	weight = 40
-
-
-[blackfriday]
-	smartypants	= true
-	fractions = true
-	smartDashes = true
-	plainIDAnchors = true
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 4
