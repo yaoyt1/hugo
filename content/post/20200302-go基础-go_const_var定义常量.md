@@ -1,0 +1,75 @@
++++
+title="20200302 Go基础 Go_const_var定义常量"
+tags=["go基础"]
+categories=["go"]
+date=2020-03-02T08:29:58+08:00
+toc=true
++++
+
+## const 常量
+> 格式: const<constName>[constType]=<赋值表达式>
+   1. 单个定义 
+      ```go
+      const a int =100
+      ``` 
+   2. 多个定义
+      ```go
+      const a,b,c =1,"go",'c'
+      const a,b,c int=1,2,3
+      ```  
+   4. 定义常量组
+      ```go
+      const(
+          a=100
+          b=3.14
+          c=false
+      )
+      ```   
+   6. 常量的初始化规则
+      * 常量必须是确定存在
+      * 用已存在的常量对常量进行初始化
+      * 常量组初始化组如果不提供初始值,将使用上行表达式
+      * 多个定义常量组初始化规则  各行定义的常量个数必须相等
+   
+## var 变量
+ > 格式: 
+   1. var <variableName>[variableType] 
+   2. 省掉var 关键字 用:代替 列如:
+      * cont:=10
+   3. 变量的声明和赋值
+      1. 标准的 
+         ```go
+         var i int
+         i=10 
+         ```
+      2. 声明的同时赋值 
+         ```go
+         var i int =10
+         ```
+      3. 采用类型推断定义 
+         ```go
+         var i=10
+         ``` 
+      4. 最简单 
+         ```go
+         i:=10
+         ```  
+      5. 多个局部变量同时声明 
+         ```go
+         var a,b,c int =1,2,3
+         ```
+      6. 多个全局变量同时声明
+         ```go
+         var( a,b,c int)
+         ``` 
+1.  注:=  赋值忽略用"_"来代替
+   
+
+
+## 类型
+* 值类型 
+   > int bool byte complex string error
+* 复合类型 
+   > 数组,结构体
+* 引用类型
+   > pointer slice map channel interface function
