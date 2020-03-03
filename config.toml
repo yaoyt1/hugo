@@ -1,4 +1,4 @@
-baseURL = "https://www.flysnow.org"
+baseURL = "https://yaoyoutianhugo.netlify.com/"
 languageCode = "zh-CN"
 title = "@瑾语@"
 theme = "maupassant-hugo-master"
