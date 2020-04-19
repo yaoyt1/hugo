@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on @瑾语@</title>
+    <link>https://yaoyoutianhugo.netlify.com/categories/go/</link>
+    <description>Recent content in go on @瑾语@</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 14 Apr 2020 23:13:29 +0800</lastBuildDate>
+    
+	<atom:link href="https://yaoyoutianhugo.netlify.com/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>20200414 Go基础 Go函数</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/20200414-go%E5%9F%BA%E7%A1%80-go%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Tue, 14 Apr 2020 23:13:29 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/20200414-go%E5%9F%BA%E7%A1%80-go%E5%87%BD%E6%95%B0/</guid>
+      <description>go 函数结构 func函数关键字, 函数名, 参数列表, 返回列表, 函数体 访问性 大写时,其他包可访问 小写时, 相同包可访问 实例 1 2 3 func func_namen(param-list)(result-list){ function-body } 特点: 函数可以没有输入参数,也可以没有返回值(默认返回0) 多个相邻的相同类型参数可以简写 支持有名的返回值 不支持重载 不支持嵌套 不支持默认参数</description>
+    </item>
+    
+    <item>
+      <title>20200302 Go基础 Go数据类型</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Mon, 02 Mar 2020 08:30:43 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>&amp;lt;&amp;gt;必须 []可有可无 基本数据类型 布尔型, 整型, 浮点型, 字符型, 指针类型, 复数型 常量 格式: const[constType]=&amp;lt;赋值表达式&amp;gt; 单个定义 const a int =100 多个定义 const a,b,c =1,&amp;ldquo;go&amp;rdquo;,&amp;lsquo;c&amp;rsquo; 定义常量组 const( a=100 b=3.14 c=false ) 常量的初始化规则 常量必须是确定存在 用已存在的常量对常量进行初始化 常量组</description>
+    </item>
+    
+    <item>
+      <title>20200302 Go基础 Go_const_var定义常量</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go_const_var%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F/</link>
+      <pubDate>Mon, 02 Mar 2020 08:29:58 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go_const_var%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F/</guid>
+      <description>const 常量 格式: const[constType]=&amp;lt;赋值表达式&amp;gt; 单个定义 1 const a int =100 多个定义 1 2 const a,b,c =1,&amp;#34;go&amp;#34;,&amp;#39;c&amp;#39; const a,b,c int=1,2,3 定义常量组 1 2 3 4 5 const( a=100 b=3.14 c=false ) 常量的初始化规则 常量必须是确定存在 用已存在的常量对常量进行初始化 常量组初始化组如果不提供初始值,将使用上行表达式 多个定义常量组初始化规则</description>
+    </item>
+    
+    <item>
+      <title>20200302 Go基础 Go基础语法</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 02 Mar 2020 08:27:35 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
+      <description>go程序 包是组成go程序的基本单位 go程序设计 包声明部分 package 声明要创建的包 包导入部分 import 导入第三方包 函数声明部分 func 创建函数 高级程序语言中 内部几个概念 token(重点) token是构成基本不可在分割的单元 , 编译器编译源程序第一步就是讲源程序分割为一个个独立的token go 的token分隔</description>
+    </item>
+    
+    <item>
+      <title>20200302 Go基础 Go命令</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 02 Mar 2020 08:25:40 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E5%91%BD%E4%BB%A4/</guid>
+      <description>go常用命令格式go command [arguments] get , run , build , fmt , install , test cmd 命令 go env :查看当前go环境 go 命令 go get 动态获取到远程代码 (github /google code) go run 编译并直接运行,会生成一个临时文件 go build 用于测试编译包用于检查编译错误 go fmt 格式化源代码 go install 编译导入的包和主程序 可执行文件放入bin文件夹, 包编译的文件放入pkg 文件夹中 go</description>
+    </item>
+    
+  </channel>
+</rss>

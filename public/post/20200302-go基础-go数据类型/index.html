@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>20200302 Go基础 Go数据类型 | @瑾语@</title>
+    <meta property="og:title" content="20200302 Go基础 Go数据类型 - @瑾语@">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-03-02T08:30:43&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-03-02T08:30:43&#43;08:00'>
+        
+    <meta name="Keywords" content="个人博客">
+    <meta name="description" content="20200302 Go基础 Go数据类型">
+        
+    <meta name="author" content="@瑾语@">
+    <meta property="og:url" content="https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4031353640611810",
+        enable_page_level_ads: true
+    });
+    </script>
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://yaoyoutianhugo.netlify.com/">
+                        @瑾语@
+                    </a>
+                
+                <p class="description">个人博客</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://yaoyoutianhugo.netlify.com/">首页</a>
+                    
+                    <a  href="https://yaoyoutianhugo.netlify.com/tools/" title="工具">工具</a>
+                    
+                    <a  href="https://yaoyoutianhugo.netlify.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://yaoyoutianhugo.netlify.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数据类型">数据类型</a>
+      <ul>
+        <li><a href="#通道运算符-">通道运算符<-</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">20200302 Go基础 Go数据类型</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年3月2日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://yaoyoutianhugo.netlify.com/categories/go'>go</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <p>&lt;&gt;必须 []可有可无</p>
+<h1 id="基本数据类型">基本数据类型</h1>
+<blockquote>
+<p>布尔型, 整型, 浮点型, 字符型, 指针类型, 复数型</p>
+</blockquote>
+<ul>
+<li>
+<p>常量</p>
+<blockquote>
+<p>格式: const<!-- raw HTML omitted -->[constType]=&lt;赋值表达式&gt;</p>
+</blockquote>
+<ol>
+<li>单个定义
+<ul>
+<li>const a int =100</li>
+</ul>
+</li>
+<li>多个定义
+<ul>
+<li>const a,b,c =1,&ldquo;go&rdquo;,&lsquo;c&rsquo;</li>
+</ul>
+</li>
+<li>定义常量组
+<ul>
+<li>const(
+a=100
+b=3.14
+c=false
+)</li>
+</ul>
+</li>
+<li>常量的初始化规则
+<ul>
+<li>常量必须是确定存在</li>
+<li>用已存在的常量对常量进行初始化</li>
+<li>常量组初始化组如果不提供初始值,将使用上行表达式</li>
+<li>多个定义常量组初始化规则  各行定义的常量个数必须相等</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>变量</p>
+<blockquote>
+<p>格式:</p>
+</blockquote>
+<ol>
+<li>var <!-- raw HTML omitted -->[variableType]</li>
+<li>省掉var 关键字 用:代替 列如:cont:=10</li>
+<li>值类型 , 复合类型 , 引用类型
+<ol>
+<li>值类型:int bool byte complex string error</li>
+<li>数组,结构体</li>
+<li>引用类型:pointer slice map channel interface function</li>
+</ol>
+</li>
+<li>变量的类型0值</li>
+<li>变量的声明和赋值
+<ul>
+<li>标准的 var i int    i=10</li>
+<li>声明的同时赋值 var i int =10</li>
+<li>采用类型推断定义 var i=10</li>
+<li>最简单 i:=10</li>
+<li>多个局部变量同时声明 var a,b,c int =1,2,3</li>
+<li>多个全局变量同时声明 var( a,b,c int )</li>
+<li>赋值忽略用&rdquo;_&ldquo;来代替</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="数据类型">数据类型</h2>
+<ul>
+<li>
+<p>布尔类型bool 例子: var b bool = true</p>
+<blockquote>
+<p>布尔类型不接受其他类型的赋值
+布尔类型不能进行强制转换</p>
+</blockquote>
+</li>
+<li>
+<p>整型类型int</p>
+<ol>
+<li>整型数据的表示方法
+<ul>
+<li>十进制</li>
+<li>八进制</li>
+<li>十六进制</li>
+<li>指数形式 有数字和字母e组成</li>
+</ul>
+</li>
+<li>整型数据溢出</li>
+<li>整型数据溢出检查 matn中的max,min</li>
+</ol>
+<blockquote>
+<p>go 中带u的表示无符号整数, 不带u的表示有符号整数</p>
+</blockquote>
+</li>
+<li>
+<p>浮点类型float</p>
+<ol>
+<li>表示方法
+<ul>
+<li>十进制</li>
+<li>指数形式</li>
+</ul>
+</li>
+<li>浮点型的数据类型
+<ul>
+<li>float 32 精确到小数点后7位</li>
+<li>float 64 精确到小数点后15位</li>
+</ul>
+</li>
+<li>浮点数的舍入误差</li>
+</ol>
+</li>
+<li>
+<p>复数complex</p>
+<ol>
+<li>复数的构成和类型
+<blockquote>
+<p>和数学上的复数基本一致 定义了两种complex64, complex128</p>
+</blockquote>
+</li>
+<li>复数的实部和虚部
+<ul>
+<li>real(z) 获取实部</li>
+<li>imag(z) 获取虚部</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>字节类型byte</p>
+<ol>
+<li>存储形式</li>
+<li>字节输出
+<ul>
+<li>直接输出 是整数形式</li>
+<li>以字符类型输出 转型</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>字节长度是1 , byte是uint的别名</p>
+</blockquote>
+</li>
+<li>
+<p>rune类型</p>
+<ol>
+<li>Unicode 编码
+<ul>
+<li>utf-8 用1~4B不定长的</li>
+<li>uft-16 用2B无符号整数存储</li>
+<li>utf-31 用4B无符号整数存储</li>
+</ul>
+</li>
+<li>Unicode 字符的定义和输出
+<ul>
+<li>直接输出是整数</li>
+<li>以字符类型输出 转型</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>rune是int32的别名</p>
+</blockquote>
+</li>
+<li>
+<p>uintptr类型</p>
+<ol>
+<li>地址和指针</li>
+<li>变量的指针和指针变量</li>
+<li>指针变量的定义和引用
+var &lt;指针变量名&gt;*&lt;基本类型&gt;</li>
+<li>使用指针变量的注意事项
+<ul>
+<li>指针变量中默认是nil go语言中没有NULL常量</li>
+<li>go 不支持指针运算</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>和int类型基本一样   * 是指向的意思</p>
+</blockquote>
+</li>
+<li>
+<p>枚举类型</p>
+<ol>
+<li>一般通过常量组合iota来实现 ,必须通过常量组来实现</li>
+</ol>
+</li>
+<li>
+<p>iota</p>
+<ol>
+<li>iota是0开头 以1递增的</li>
+<li>iota遇到const关键字会自动归零</li>
+</ol>
+</li>
+<li>
+<p>类型别名 type</p>
+<blockquote>
+<p>type{ word int }用word为int别名</p>
+</blockquote>
+</li>
+<li>
+<p>类型转换<!-- raw HTML omitted -->[:]=<!-- raw HTML omitted -->(<!-- raw HTML omitted -->)</p>
+</li>
+</ul>
+<h3 id="通道运算符-">通道运算符&lt;-</h3>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://yaoyoutianhugo.netlify.com/">@瑾语@</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/20200302-go%E5%9F%BA%E7%A1%80-go_const_var%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F/">20200302 Go基础 Go_const_var定义常量</a></li>
+        
+        <li><a href="/post/20200302-go%E5%9F%BA%E7%A1%80-go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">20200302 Go基础 Go基础语法</a></li>
+        
+        <li><a href="/post/20200302-go%E5%9F%BA%E7%A1%80-go%E5%91%BD%E4%BB%A4/">20200302 Go基础 Go命令</a></li>
+        
+        <li><a href="/about/">关于我</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='https://yaoyoutianhugo.netlify.com/tags/go%E5%9F%BA%E7%A1%80'>go基础</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "yaoyt1/hugo"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://yaoyoutianhugo.netlify.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://yaoyoutianhugo.netlify.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://yaoyoutianhugo.netlify.com/post/20200414-go%E5%9F%BA%E7%A1%80-go%E5%87%BD%E6%95%B0/" title="20200414 Go基础 Go函数">20200414 Go基础 Go函数</a>
+    </li>
+    
+    <li>
+        <a href="https://yaoyoutianhugo.netlify.com/post/20200315-go%E5%9F%BA%E7%A1%80-%E5%9F%BA%E7%A1%80%E5%8F%AA%E6%98%AF%E5%87%BA%E9%A2%98/" title="20200315 Go基础 基础只是出题">20200315 Go基础 基础只是出题</a>
+    </li>
+    
+    <li>
+        <a href="https://yaoyoutianhugo.netlify.com/post/20200311-%E4%BA%BA%E7%94%9F2020%E5%B9%B4%E6%80%BB%E7%BB%93/" title="20200311 人生2020年总结">20200311 人生2020年总结</a>
+    </li>
+    
+    <li>
+        <a href="https://yaoyoutianhugo.netlify.com/post/20200305-%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" title="20200305 学习计划">20200305 学习计划</a>
+    </li>
+    
+    <li>
+        <a href="https://yaoyoutianhugo.netlify.com/post/20200302-typescript-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%92%8C%E5%B7%A5%E5%85%B7/" title="20200302 Typescript 配置环境和工具">20200302 Typescript 配置环境和工具</a>
+    </li>
+    
+    <li>
+        <a href="https://yaoyoutianhugo.netlify.com/post/20200302-windows10-%E7%B3%BB%E7%BB%9F%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/" title="20200302 Windows10 系统永久激活工具">20200302 Windows10 系统永久激活工具</a>
+    </li>
+    
+    <li>
+        <a href="https://yaoyoutianhugo.netlify.com/post/20200302-markdown/" title="20200302 Markdown">20200302 Markdown</a>
+    </li>
+    
+    <li>
+        <a href="https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="20200302 Go基础 Go数据类型">20200302 Go基础 Go数据类型</a>
+    </li>
+    
+    <li>
+        <a href="https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go_const_var%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F/" title="20200302 Go基础 Go_const_var定义常量">20200302 Go基础 Go_const_var定义常量</a>
+    </li>
+    
+    <li>
+        <a href="https://yaoyoutianhugo.netlify.com/post/20200302-go%E5%9F%BA%E7%A1%80-go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="20200302 Go基础 Go基础语法">20200302 Go基础 Go基础语法</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="https://yaoyoutianhugo.netlify.com/categories/go/">go (5)</a></li>
+    
+    <li><a href="https://yaoyoutianhugo.netlify.com/categories/typescript/">typescript (1)</a></li>
+    
+    <li><a href="https://yaoyoutianhugo.netlify.com/categories/windows/">windows (1)</a></li>
+    
+    <li><a href="https://yaoyoutianhugo.netlify.com/categories/%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/">写作技巧 (1)</a></li>
+    
+    <li><a href="https://yaoyoutianhugo.netlify.com/categories/%E6%80%BB%E7%BB%93/">总结 (1)</a></li>
+    
+    <li><a href="https://yaoyoutianhugo.netlify.com/categories/%E7%B3%BB%E7%BB%9F/">系统 (1)</a></li>
+    
+    <li><a href="https://yaoyoutianhugo.netlify.com/categories/%E8%AE%A1%E5%88%92/">计划 (1)</a></li>
+    
+    <li><a href="https://yaoyoutianhugo.netlify.com/categories/%E9%A2%98%E7%9B%AE/">题目 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://yaoyoutianhugo.netlify.com/tags/go%E5%9F%BA%E7%A1%80/">go基础</a>
+    
+    <a href="https://yaoyoutianhugo.netlify.com/tags/go%E5%9F%BA%E7%A1%80%E5%87%BA%E9%A2%98/">go基础出题</a>
+    
+    <a href="https://yaoyoutianhugo.netlify.com/tags/markdown/">markdown</a>
+    
+    <a href="https://yaoyoutianhugo.netlify.com/tags/typescript%E5%9F%BA%E7%A1%80/">typescript基础</a>
+    
+    <a href="https://yaoyoutianhugo.netlify.com/tags/windows/">windows</a>
+    
+    <a href="https://yaoyoutianhugo.netlify.com/tags/%E4%BA%BA%E7%94%9F%E6%80%BB%E7%BB%93/">人生总结</a>
+    
+    <a href="https://yaoyoutianhugo.netlify.com/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">学习计划</a>
+    
+    <a href="https://yaoyoutianhugo.netlify.com/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+    
+    <a href="https://yaoyoutianhugo.netlify.com/tags/%E7%BD%91%E9%A1%B5%E9%93%BE%E6%8E%A5/">网页链接</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org/" title="飞雪无情的博客">飞雪无情的博客</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e" title="Android Gradle权威指南">Android Gradle权威指南</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://yaoyoutianhugo.netlify.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://yaoyoutianhugo.netlify.com/">@瑾语@ By @瑾语@</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+
+</html>
