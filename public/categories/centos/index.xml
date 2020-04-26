@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>centos on @瑾语@</title>
+    <link>https://yaoyoutianhugo.netlify.com/categories/centos/</link>
+    <description>Recent content in centos on @瑾语@</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 20 Apr 2020 14:46:24 +0800</lastBuildDate>
+    
+	<atom:link href="https://yaoyoutianhugo.netlify.com/categories/centos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos基础命令</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/%E7%B3%BB%E7%BB%9F/centos/</link>
+      <pubDate>Mon, 20 Apr 2020 14:46:24 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/%E7%B3%BB%E7%BB%9F/centos/</guid>
+      <description>CentOs ssh登录 打开终端 ssh 用户名@服务器IP地址 随后输入密码 liunx基本操作命令 命令 说明 netstat -tnlp | grep 80 查看端口80端口 上传文件到CentOs</description>
+    </item>
+    
+  </channel>
+</rss>

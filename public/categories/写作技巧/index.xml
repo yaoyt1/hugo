@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>写作技巧 on @瑾语@</title>
+    <link>https://yaoyoutianhugo.netlify.com/categories/%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/</link>
+    <description>Recent content in 写作技巧 on @瑾语@</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 02 Mar 2020 08:31:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://yaoyoutianhugo.netlify.com/categories/%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>20200302 Markdown</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/%E5%86%99%E4%BD%9C/20200302-markdown/</link>
+      <pubDate>Mon, 02 Mar 2020 08:31:53 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/%E5%86%99%E4%BD%9C/20200302-markdown/</guid>
+      <description>markdown 学习笔记 标题 一级标签 二级标签 三级标签 字体 倾斜字体 加粗字体 倾斜加粗字体 删除线字体 选择 你今天学习了吗 减号+[空格或者x] 你昨天学习了吗 引用 引用主体 引用子体 再次引用 分割线 &amp;mdash;三个以上的都可以 图片 #超链接 简书 百度 #列表 无序列表 -,+,*都可以 1 5 6 1 2 3 4 4 3 有序列表 2 1 3 4</description>
+    </item>
+    
+  </channel>
+</rss>

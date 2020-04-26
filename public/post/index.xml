@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on @瑾语@</title>
+    <link>https://yaoyoutianhugo.netlify.com/post/</link>
+    <description>Recent content in Posts on @瑾语@</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 20 Apr 2020 14:46:24 +0800</lastBuildDate>
+    
+	<atom:link href="https://yaoyoutianhugo.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos基础命令</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/%E7%B3%BB%E7%BB%9F/centos/</link>
+      <pubDate>Mon, 20 Apr 2020 14:46:24 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/%E7%B3%BB%E7%BB%9F/centos/</guid>
+      <description>CentOs ssh登录 打开终端 ssh 用户名@服务器IP地址 随后输入密码 liunx基本操作命令 命令 说明 netstat -tnlp | grep 80 查看端口80端口 上传文件到CentOs</description>
+    </item>
+    
+    <item>
+      <title>20200414 Go基础 Go函数</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80/20200414-go%E5%9F%BA%E7%A1%80-go%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Tue, 14 Apr 2020 23:13:29 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80/20200414-go%E5%9F%BA%E7%A1%80-go%E5%87%BD%E6%95%B0/</guid>
+      <description>go 函数结构 func函数关键字, 函数名, 参数列表, 返回列表, 函数体 访问性 大写时,其他包可访问 小写时, 相同包可访问 实例 1 2 3 func func_namen(param-list)(result-list){ function-body } 特点: 函数可以没有输入参数,也可以没有返回值(默认返回0) 多个相邻的相同类型参数可以简写 支持有名的返回值 不支持重载 不支持嵌套 不支持默认参数</description>
+    </item>
+    
+    <item>
+      <title>20200315 Go基础 基础只是出题</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80%E5%87%BA%E9%A2%98/20200315-go%E5%9F%BA%E7%A1%80-%E5%9F%BA%E7%A1%80%E5%8F%AA%E6%98%AF%E5%87%BA%E9%A2%98/</link>
+      <pubDate>Sun, 15 Mar 2020 10:58:12 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80%E5%87%BA%E9%A2%98/20200315-go%E5%9F%BA%E7%A1%80-%E5%9F%BA%E7%A1%80%E5%8F%AA%E6%98%AF%E5%87%BA%E9%A2%98/</guid>
+      <description>go基础知识出题 源: Go语言核心编程 李文塔/著 初识go语言程序 源:1.2初识Go程序 所有的Go源程序文件头部必须要有一个包声明语句. 源程序默认为UTF-8 编码. main函数所在的包名必须时main Go词法单元 源:1.3Go词法单元 token, 关键字, 标识符, 操作符, 字面量 ,分隔符 25关键字</description>
+    </item>
+    
+    <item>
+      <title>20200311 人生2020年总结</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/%E6%80%BB%E7%BB%93/20200311-%E4%BA%BA%E7%94%9F2020%E5%B9%B4%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 11 Mar 2020 20:51:23 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/%E6%80%BB%E7%BB%93/20200311-%E4%BA%BA%E7%94%9F2020%E5%B9%B4%E6%80%BB%E7%BB%93/</guid>
+      <description>学习总结 it方面学习: 今年的我觉得:(老年人生活) 把整个节奏变慢, 慢下来. 多余的时间学习go,计算机网络,数据结构和算法. 学会做菜 学会口琴, 唱歌 生活总结 形成一个良好的生物钟 平常要多运动, 养成一个良好的体型 放下急切的心 说话方面 每天起来读书: 一小章</description>
+    </item>
+    
+    <item>
+      <title>20200302 Typescript 配置环境和工具</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/typescript/20200302-typescript-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%92%8C%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 02 Mar 2020 08:34:38 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/typescript/20200302-typescript-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%92%8C%E5%B7%A5%E5%85%B7/</guid>
+      <description>TypeScript 环境 安装node.js node.js下载 安装TypeScript cmd 命令运行node.js命令安装TS: npm install -g typescript 高版本的游览器有些是支持TS 高版本的可以直接导入TS引用 编译成js tsc hellword.ts 编译器自动编译 vscode 自动编译 项目目录下运行 tsc &amp;ndash;init 修改tsconfig.json的目标输出文件夹 然后点击终</description>
+    </item>
+    
+    <item>
+      <title>20200302 Windows10 系统永久激活工具</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/%E7%B3%BB%E7%BB%9F/windows/20200302-windows10-%E7%B3%BB%E7%BB%9F%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 02 Mar 2020 08:33:07 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/%E7%B3%BB%E7%BB%9F/windows/20200302-windows10-%E7%B3%BB%E7%BB%9F%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/</guid>
+      <description>windows10 系统永久激活工具 工具 工具直达 提取码: x8eh 检查是否激活成功 cmd： 查看激活日期 slmgr.vbs /xpr</description>
+    </item>
+    
+    <item>
+      <title>20200302 Markdown</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/%E5%86%99%E4%BD%9C/20200302-markdown/</link>
+      <pubDate>Mon, 02 Mar 2020 08:31:53 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/%E5%86%99%E4%BD%9C/20200302-markdown/</guid>
+      <description>markdown 学习笔记 标题 一级标签 二级标签 三级标签 字体 倾斜字体 加粗字体 倾斜加粗字体 删除线字体 选择 你今天学习了吗 减号+[空格或者x] 你昨天学习了吗 引用 引用主体 引用子体 再次引用 分割线 &amp;mdash;三个以上的都可以 图片 #超链接 简书 百度 #列表 无序列表 -,+,*都可以 1 5 6 1 2 3 4 4 3 有序列表 2 1 3 4</description>
+    </item>
+    
+    <item>
+      <title>20200302 Go基础 Go基本数据类型</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80/20200302-go%E5%9F%BA%E7%A1%80-go%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Mon, 02 Mar 2020 08:30:43 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80/20200302-go%E5%9F%BA%E7%A1%80-go%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>&amp;lt;&amp;gt;必须 []可有可无 基本数据类型 布尔型, 整型, 浮点型, 字符型, 指针类型, 复数型 数据类型 不同类型的整型必须进行强制类型转换 布尔类型bool 例子: var b bool = true 布尔类型不接受其他类型的赋值 布尔类型不能进行强制转换 bool类型只有两个值 true, false(true,fasle 是Go的预声明标识符) 布尔型数据不能和</description>
+    </item>
+    
+    <item>
+      <title>20200302 Go基础 Go定义常量变量</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80/20200302-go%E5%9F%BA%E7%A1%80-go%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Mon, 02 Mar 2020 08:29:58 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80/20200302-go%E5%9F%BA%E7%A1%80-go%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E5%8F%98%E9%87%8F/</guid>
+      <description>const 常量 格式: const[constType]=&amp;lt;赋值表达式&amp;gt; 单个定义 1 const a int =100 多个定义 1 2 const a,b,c =1,&amp;#34;go&amp;#34;,&amp;#39;c&amp;#39; const a,b,c int=1,2,3 定义常量组 1 2 3 4 5 const( a=100 b=3.14 c=false ) 常量的初始化规则 常量必须是确定存在 用已存在的常量对常量进行初始化 常量组初始化组如果不提供初始值,将使用上行表达式 多个定义常量组初始化规则</description>
+    </item>
+    
+    <item>
+      <title>20200302 Go基础 Go基础语法</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80/20200302-go%E5%9F%BA%E7%A1%80-go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 02 Mar 2020 08:27:35 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80/20200302-go%E5%9F%BA%E7%A1%80-go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
+      <description>go程序 包是组成go程序的基本单位 go程序设计 包声明部分 package 声明要创建的包 包导入部分 import 导入第三方包 函数声明部分 func 创建函数 高级程序语言中 内部几个概念 token(重点) token是构成基本不可在分割的单元 , 编译器编译源程序第一步就是讲源程序分割为一个个独立的token go 的token分隔</description>
+    </item>
+    
+    <item>
+      <title>20200302 Go基础 Go命令</title>
+      <link>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80/20200302-go%E5%9F%BA%E7%A1%80-go%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 02 Mar 2020 08:25:40 +0800</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/go%E5%9F%BA%E7%A1%80/20200302-go%E5%9F%BA%E7%A1%80-go%E5%91%BD%E4%BB%A4/</guid>
+      <description>go常用命令格式go command [arguments] get , run , build , fmt , install , test cmd 命令 go env :查看当前go环境 go 命令 go get 动态获取到远程代码 (github /google code) go run 编译并直接运行,会生成一个临时文件 go build 用于测试编译包用于检查编译错误 go fmt 格式化源代码 go install 编译导入的包和主程序 可执行文件放入bin文件夹, 包编译的文件放入pkg 文件夹中 go</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yaoyoutianhugo.netlify.com/post/%E6%80%BB%E7%BB%93/20200305-%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yaoyoutianhugo.netlify.com/post/%E6%80%BB%E7%BB%93/20200305-%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
